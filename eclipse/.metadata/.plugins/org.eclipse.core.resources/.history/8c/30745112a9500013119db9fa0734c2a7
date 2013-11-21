@@ -1,0 +1,61 @@
+package nekto.odyssey.entity;
+
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.world.World;
+
+public class EntityBlock extends Entity
+{
+	public int blockId;
+	public int meta;
+
+	public EntityBlock(World par1World)
+	{
+		super(par1World);
+		
+		setSize(1.0F, 1.0F);
+		entityCollisionReduction = 1;
+	}
+	
+	public EntityBlock(World par1World, int x, int y, int z, int id, int meta)
+	{
+		super(par1World);
+		
+		setSize(1.0F, 1.0F);
+		entityCollisionReduction = 1;
+		this.setLocationAndAngles(x, y, z, 0, 0);
+		this.blockId = id;
+		this.meta = meta;
+	}
+	
+	@Override
+	public boolean canBeCollidedWith()
+    {
+        return true;
+    }
+
+	@Override
+	protected void entityInit() {}
+
+	@Override
+	protected void readEntityFromNBT(NBTTagCompound nbttagcompound) {}
+
+	@Override
+	protected void writeEntityToNBT(NBTTagCompound nbttagcompound) {}
+	
+	@Override
+    public boolean interactFirst(EntityPlayer par1EntityPlayer)
+    {
+        this.rejoinWorld();
+        return true;
+    }
+
+    public void rejoinWorld()
+    {
+        worldObj.setBlock((int) Math.round(posX - 0.5), (int) Math.round(posY - 0.5), (int) Math.round(posZ - 0.5), this.blockId, this.meta, 2);
+
+        this.setDead();
+    }
+
+}

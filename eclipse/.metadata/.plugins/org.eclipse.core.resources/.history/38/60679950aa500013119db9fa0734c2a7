@@ -1,0 +1,92 @@
+package nekto.odyssey.entity;
+
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.world.World;
+
+public class EntityBlock extends Entity
+{
+	public int blockId;
+	public int meta;
+
+	public EntityBlock(World par1World)
+	{
+		super(par1World);
+
+		setSize(1.0F, 1.0F);
+		entityCollisionReduction = 1;
+	}
+
+	public EntityBlock(World par1World, int x, int y, int z, int id, int meta)
+	{
+		super(par1World);
+
+		setSize(1.0F, 1.0F);
+		entityCollisionReduction = 1;
+		this.yOffset = (this.height / 2);
+		this.setLocationAndAngles(x + 0.5, y, z + 0.5, 0, 0);
+		this.blockId = id;
+		this.meta = meta;
+	}
+
+	@Override
+	public boolean canBeCollidedWith()
+	{
+		return true;
+	}
+
+	@Override
+	protected void entityInit()
+	{
+	}
+
+	@Override
+	protected void readEntityFromNBT(NBTTagCompound nbttagcompound)
+	{
+	}
+
+	@Override
+	protected void writeEntityToNBT(NBTTagCompound nbttagcompound)
+	{
+	}
+
+	@Override
+	public boolean interactFirst(EntityPlayer par1EntityPlayer)
+	{
+		this.rejoinWorld();
+		return true;
+	}
+
+	public void rejoinWorld()
+	{
+		worldObj.setBlock((int) Math.round(posX - 0.5),
+				(int) Math.round(posY - 0.5), (int) Math.round(posZ - 0.5),
+				this.blockId, this.meta, 2);
+
+		this.setDead();
+	}
+
+	public AxisAlignedBB func_70114_g(Entity par1Entity)
+	{
+		if ((par1Entity instanceof EntityLiving))
+		{
+			if (Block.field_71973_m[this.blockID] != null)
+			{
+				if ((!(Block.field_71973_m[this.blockID] instanceof BlockFluid))
+						&& ((this.field_70159_w > 2.0D)
+								|| (this.field_70181_x > 2.0D) || (this.field_70179_y > 2.0D)))
+				{
+					int damage = (int) (1.2D * (Math.abs(this.field_70159_w)
+							+ Math.abs(this.field_70181_x) + Math
+							.abs(this.field_70179_y)));
+					((EntityLiving) par1Entity).func_70097_a(
+							DamageSource.field_82729_p, damage);
+				}
+			}
+		}
+
+		return null;
+	}
+
+}

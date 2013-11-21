@@ -1,0 +1,100 @@
+package nekto.odyssey.entity;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockFluid;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.DamageSource;
+import net.minecraft.world.World;
+
+public class EntityBlock extends Entity
+{
+	public int blockId;
+	public int meta;
+
+	public EntityBlock(World par1World)
+	{
+		super(par1World);
+
+		setSize(1.0F, 1.0F);
+		entityCollisionReduction = 1;
+	}
+
+	public EntityBlock(World par1World, int x, int y, int z, int id, int meta)
+	{
+		super(par1World);
+
+		setSize(1.0F, 1.0F);
+		entityCollisionReduction = 1;
+		this.yOffset = (this.height / 2);
+		this.setLocationAndAngles(x + 0.5, y, z + 0.5, 0, 0);
+		this.blockId = id;
+		this.meta = meta;
+	}
+	
+	@Override
+	public boolean canBePushed()
+	{
+		return true;
+	}
+
+	@Override
+	public boolean canBeCollidedWith()
+	{
+		return true;
+	}
+
+	@Override
+	protected void entityInit()
+	{
+	}
+
+	@Override
+	protected void readEntityFromNBT(NBTTagCompound nbttagcompound)
+	{
+	}
+
+	@Override
+	protected void writeEntityToNBT(NBTTagCompound nbttagcompound)
+	{
+	}
+
+	@Override
+	public boolean interactFirst(EntityPlayer par1EntityPlayer)
+	{
+		this.rejoinWorld();
+		return true;
+	}
+
+	public void rejoinWorld()
+	{
+		worldObj.setBlock((int) Math.round(posX - 0.5),
+				(int) Math.round(posY - 0.5), (int) Math.round(posZ - 0.5),
+				this.blockId, this.meta, 2);
+
+		this.setDead();
+	}
+
+	public AxisAlignedBB func_70114_g(Entity par1Entity)
+	{
+		if ((par1Entity instanceof EntityLiving))
+		{
+			if (Block.blocksList[this.blockId] != null)
+			{
+				if ((!(Block.blocksList[this.blockId] instanceof BlockFluid))
+						&& ((this.motionX > 2.0D)
+								|| (this.motionY > 2.0D) || (this.motionZ > 2.0D)))
+				{
+					int damage = (int) (1.2D * (Math.abs(this.motionX) + Math.abs(this.motionY) + Math.abs(this.motionZ)));
+					((EntityLiving) par1Entity).attackEntityFrom(DamageSource.fallingBlock, damage);
+				}
+			}
+		}
+
+		return null;
+	}
+	
+}

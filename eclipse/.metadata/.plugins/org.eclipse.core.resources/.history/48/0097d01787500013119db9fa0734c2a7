@@ -1,0 +1,10 @@
+package nekto.odyssey.core;
+
+import nekto.odyssey.lib.GeneralRef;
+import cpw.mods.fml.common.Mod;
+
+@Mod(modid = GeneralRef.MODID, name = "Odyssey Craft", version = GeneralRef.VERSION)
+public class OdysseyCore
+{
+
+}

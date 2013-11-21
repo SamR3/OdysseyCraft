@@ -1,0 +1,38 @@
+package nekto.odyssey.entity;
+
+import net.minecraft.entity.Entity;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.world.World;
+
+public class EntityBlock extends Entity
+{
+	public int blockId;
+	
+
+	public EntityBlock(World par1World)
+	{
+		super(par1World);
+		
+		setSize(1.0F, 1.0F);
+		entityCollisionReduction = 1;
+	}
+	
+	public EntityBlock(World par1World, int x, int y, int z)
+	{
+		super(par1World);
+		
+		setSize(1.0F, 1.0F);
+		entityCollisionReduction = 1;
+		this.setLocationAndAngles(x, y, z, 0, 0);
+	}
+
+	@Override
+	protected void entityInit() {}
+
+	@Override
+	protected void readEntityFromNBT(NBTTagCompound nbttagcompound) {}
+
+	@Override
+	protected void writeEntityToNBT(NBTTagCompound nbttagcompound) {}
+
+}

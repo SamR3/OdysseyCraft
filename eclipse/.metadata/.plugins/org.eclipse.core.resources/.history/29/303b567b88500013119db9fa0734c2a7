@@ -1,0 +1,8 @@
+package nekto.odyssey.core;
+
+import net.minecraft.block.Block;
+
+public class BlockConsole extends Block
+{
+
+}

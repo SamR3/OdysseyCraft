@@ -1,0 +1,25 @@
+package nekto.odyssey.core;
+
+import nekto.odyssey.tile.TileEntityConsole;
+import net.minecraft.block.BlockContainer;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
+
+public class BlockConsole extends BlockContainer
+{
+
+	public BlockConsole(int par1, Material par2Material)
+	{
+		super(par1, par2Material);
+		setCreativeTab(CreativeTabs.tabBlock);
+	}
+
+	@Override
+	public TileEntity createNewTileEntity(World world)
+	{
+		return new TileEntityConsole();
+	}
+
+}
