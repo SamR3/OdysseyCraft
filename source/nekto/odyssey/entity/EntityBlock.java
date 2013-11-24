@@ -1,5 +1,6 @@
 package nekto.odyssey.entity;
 
+import nekto.math.traversal.Traverser;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
@@ -40,7 +41,7 @@ public class EntityBlock extends Entity
 	@Override
 	public boolean canBeCollidedWith()
 	{
-		return true;
+		return !this.isDead;
 	}
 
 	@Override
@@ -71,8 +72,10 @@ public class EntityBlock extends Entity
 
 	@Override
 	public boolean interactFirst(EntityPlayer par1EntityPlayer)
-	{
+	{		
+		new Traverser((int) Math.round(posX - 0.5), (int) Math.round(posY - 0.5), (int) Math.round(posZ - 0.5), 1, this.worldObj);
 		this.rejoinWorld();
+			
 		return true;
 	}
 

@@ -1,0 +1,13 @@
+{
+  "D:\\Modding\\Odyssey Craft\\forge\\mcp\\src\\minecraft": {
+    "location": "D:\\Modding\\Odyssey Craft\\forge\\mcp\\src\\minecraft",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027D:\\Modding\\Odyssey Craft\\forge\\mcp\\src\\minecraft\u0027. Skipped."
+  },
+  "X:\\Program Files\\Java\\jre7\\lib\\rt.jar": {
+    "coordinate": "jre:jre:zip:call:1.0.0",
+    "location": "X:\\Program Files\\Java\\jre7\\lib\\rt.jar",
+    "status": "RESOLVED",
+    "error": "No class path info available for \u0027X:\\Program Files\\Java\\jre7\\lib\\rt.jar\u0027. Skipped."
+  }
+}

@@ -28,18 +28,18 @@ class ThreadDownloadImageDataINNER1 extends Thread {
          var1.setDoInput(true);
          var1.setDoOutput(false);
          var1.connect();
-         if(var1.getResponseCode() / 100 == 2) {
-            BufferedImage var2 = ImageIO.read(var1.getInputStream());
-            if(ThreadDownloadImageData.func_110555_b(this.field_110932_a) != null) {
-               var2 = ThreadDownloadImageData.func_110555_b(this.field_110932_a).func_78432_a(var2);
-            }
-
-            this.field_110932_a.func_110556_a(var2);
+         if(var1.getResponseCode() / 100 != 2) {
             return;
          }
+
+         BufferedImage var2 = ImageIO.read(var1.getInputStream());
+         if(ThreadDownloadImageData.func_110555_b(this.field_110932_a) != null) {
+            var2 = ThreadDownloadImageData.func_110555_b(this.field_110932_a).func_78432_a(var2);
+         }
+
+         this.field_110932_a.func_110556_a(var2);
       } catch (Exception var6) {
          var6.printStackTrace();
-         return;
       } finally {
          if(var1 != null) {
             var1.disconnect();
