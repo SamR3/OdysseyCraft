@@ -1,6 +1,5 @@
 package nekto.odyssey.entity;
 
-import nekto.math.traversal.Traverser;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
@@ -11,14 +10,6 @@ public class EntityBlock extends Entity
 {
 	public int blockId;
 	public int meta;
-
-	public EntityBlock(World par1World)
-	{
-		super(par1World);
-
-		setSize(1.0F, 1.0F);
-		entityCollisionReduction = 1;
-	}
 
 	public EntityBlock(World par1World, int x, int y, int z, int id, int meta)
 	{
@@ -47,12 +38,8 @@ public class EntityBlock extends Entity
 	@Override
 	public void onUpdate()
 	{
-		if(this.isCollided)
-		{
-			pushOutOfBlocks(this.posX, (this.boundingBox.minY + this.boundingBox.maxY) / 2.0D, this.posZ);
-		}
-		
-		moveEntity(this.motionX, this.motionY, this.motionZ);
+		super.onUpdate();
+		this.moveEntity(this.motionX, this.motionY, this.motionZ);
 	}
 	
 	@Override
@@ -63,19 +50,26 @@ public class EntityBlock extends Entity
 	@Override
 	protected void readEntityFromNBT(NBTTagCompound nbttagcompound)
 	{
+		super.readFromNBT(nbttagcompound);
+		
+		this.blockId = nbttagcompound.getInteger("blockId");
+		this.meta = nbttagcompound.getInteger("meta");
 	}
 
 	@Override
 	protected void writeEntityToNBT(NBTTagCompound nbttagcompound)
 	{
+		super.writeToNBTOptional(nbttagcompound);
+		
+		nbttagcompound.setInteger("blockId", this.blockId);
+		nbttagcompound.setInteger("meta", this.meta);
 	}
 
 	@Override
 	public boolean interactFirst(EntityPlayer par1EntityPlayer)
 	{		
-		new Traverser((int) Math.round(posX - 0.5), (int) Math.round(posY - 0.5), (int) Math.round(posZ - 0.5), 1, this.worldObj);
 		this.rejoinWorld();
-			
+		
 		return true;
 	}
 
@@ -90,11 +84,22 @@ public class EntityBlock extends Entity
 
 	public AxisAlignedBB getCollisionBox(Entity par1Entity)
     {
+		if(this.isDead)
+		{
+			return null;
+		}
+		
         return par1Entity.boundingBox;
     }
 	
 	public AxisAlignedBB getBoundingBox()
     {
+		if(this.isDead)
+		{
+			return null;
+		}
+	
         return this.boundingBox;
     }
 }
+

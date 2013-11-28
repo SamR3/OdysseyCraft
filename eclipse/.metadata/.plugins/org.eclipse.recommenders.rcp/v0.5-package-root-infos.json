@@ -1,41 +1,15 @@
 [
   {
-    "symbolicName": "com.google.guava",
+    "symbolicName": "com.paulscode.librarylwjglopenal",
     "version": {
-      "major": 14,
+      "major": 20100824,
       "minor": 0,
       "micro": 0,
       "qualifier": ""
     },
-    "jarFileFingerprint": "67b7be4ee7ba48e4828a42d6d5069761186d4a53",
-    "jarFileModificationDate": "2013-11-20T22:18:08.953-07:00",
-    "location": "D:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\com\\google\\guava\\guava\\14.0\\guava-14.0.jar",
-    "javaRuntime": false
-  },
-  {
-    "symbolicName": "lzma-0.0.1",
-    "version": {
-      "major": -1,
-      "minor": -1,
-      "micro": -1,
-      "qualifier": ""
-    },
-    "jarFileFingerprint": "521616dc7487b42bef0e803bd2fa3faf668101d7",
-    "jarFileModificationDate": "2013-11-20T22:18:09.062-07:00",
-    "location": "D:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\lzma\\lzma\\0.0.1\\lzma-0.0.1.jar",
-    "javaRuntime": false
-  },
-  {
-    "symbolicName": "lwjgl-2.9.0",
-    "version": {
-      "major": -1,
-      "minor": -1,
-      "micro": -1,
-      "qualifier": ""
-    },
-    "jarFileFingerprint": "5654d06e61a1bba7ae1e7f5233e1106be64c91cd",
-    "jarFileModificationDate": "2013-11-20T22:18:09.312-07:00",
-    "location": "D:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\org\\lwjgl\\lwjgl\\lwjgl\\2.9.0\\lwjgl-2.9.0.jar",
+    "jarFileFingerprint": "73e80d0794c39665aec3f62eee88ca91676674ef",
+    "jarFileModificationDate": "2013-11-20T22:18:09.015-07:00",
+    "location": "P:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\com\\paulscode\\librarylwjglopenal\\20100824\\librarylwjglopenal-20100824.jar",
     "javaRuntime": false
   },
   {
@@ -61,7 +35,20 @@
     },
     "jarFileFingerprint": "bb672829fde76cb163004752b86b0484bd0a7f4b",
     "jarFileModificationDate": "2013-11-20T22:18:09.187-07:00",
-    "location": "D:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\net\\sourceforge\\argo\\argo\\2.25\\argo-2.25.jar",
+    "location": "P:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\net\\sourceforge\\argo\\argo\\2.25\\argo-2.25.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "jinput-2.0.5",
+    "version": {
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "39c7796b469a600f72380316f6b1f11db6c2c7c4",
+    "jarFileModificationDate": "2013-11-20T22:18:09.093-07:00",
+    "location": "P:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\net\\java\\jinput\\jinput\\2.0.5\\jinput-2.0.5.jar",
     "javaRuntime": false
   },
   {
@@ -78,29 +65,68 @@
     "javaRuntime": true
   },
   {
-    "symbolicName": "com.paulscode.codecwav",
+    "symbolicName": "org.apache.commons.io",
     "version": {
-      "major": 20101023,
+      "major": 2,
+      "minor": 4,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "b1b6ea3b7e4aa4f492509a4952029cd8e48019ad",
+    "jarFileModificationDate": "2013-11-20T22:18:09.062-07:00",
+    "location": "P:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\commons-io\\commons-io\\2.4\\commons-io-2.4.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "com.google.gson",
+    "version": {
+      "major": 2,
+      "minor": 2,
+      "micro": 2,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "1f96456ca233dec780aa224bff076d8e8bca3908",
+    "jarFileModificationDate": "2013-11-20T22:18:08.906-07:00",
+    "location": "P:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\com\\google\\code\\gson\\gson\\2.2.2\\gson-2.2.2.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "com.paulscode.libraryjavasound",
+    "version": {
+      "major": 20101123,
       "minor": 0,
       "micro": 0,
       "qualifier": ""
     },
-    "jarFileFingerprint": "12f031cfe88fef5c1dd36c563c0a3a69bd7261da",
-    "jarFileModificationDate": "2013-11-20T22:18:08.969-07:00",
-    "location": "D:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\com\\paulscode\\codecwav\\20101023\\codecwav-20101023.jar",
+    "jarFileFingerprint": "5c5e304366f75f9eaa2e8cca546a1fb6109348b3",
+    "jarFileModificationDate": "2013-11-20T22:18:09-07:00",
+    "location": "P:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\com\\paulscode\\libraryjavasound\\20101123\\libraryjavasound-20101123.jar",
     "javaRuntime": false
   },
   {
-    "symbolicName": "jinput-2.0.5",
+    "symbolicName": "net.sf.jopt-simple.jopt-simple",
     "version": {
-      "major": -1,
-      "minor": -1,
-      "micro": -1,
+      "major": 4,
+      "minor": 5,
+      "micro": 0,
       "qualifier": ""
     },
-    "jarFileFingerprint": "39c7796b469a600f72380316f6b1f11db6c2c7c4",
-    "jarFileModificationDate": "2013-11-20T22:18:09.093-07:00",
-    "location": "D:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\net\\java\\jinput\\jinput\\2.0.5\\jinput-2.0.5.jar",
+    "jarFileFingerprint": "6065cc95c661255349c1d0756657be17c29a4fd3",
+    "jarFileModificationDate": "2013-11-20T22:18:09.125-07:00",
+    "location": "P:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\net\\sf\\jopt-simple\\jopt-simple\\4.5\\jopt-simple-4.5.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "bcprov",
+    "version": {
+      "major": 1,
+      "minor": 47,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "b6f5d9926b0afbde9f4dbe3db88c5247be7794bb",
+    "jarFileModificationDate": "2013-11-20T22:18:09.265-07:00",
+    "location": "P:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\org\\bouncycastle\\bcprov-jdk15on\\1.47\\bcprov-jdk15on-1.47.jar",
     "javaRuntime": false
   },
   {
@@ -117,16 +143,16 @@
     "javaRuntime": true
   },
   {
-    "symbolicName": "com.paulscode.soundsystem",
+    "symbolicName": "org.apache.commons.lang3",
     "version": {
-      "major": 20120107,
-      "minor": 0,
+      "major": 3,
+      "minor": 1,
       "micro": 0,
       "qualifier": ""
     },
-    "jarFileFingerprint": "419c05fe9be71f792b2d76cfc9b67f1ed0fec7f6",
-    "jarFileModificationDate": "2013-11-20T22:18:09.047-07:00",
-    "location": "D:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\com\\paulscode\\soundsystem\\20120107\\soundsystem-20120107.jar",
+    "jarFileFingerprint": "905075e6c80f206bbe6cf1e809d2caa69f420c76",
+    "jarFileModificationDate": "2013-11-20T22:18:09.203-07:00",
+    "location": "P:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\org\\apache\\commons\\commons-lang3\\3.1\\commons-lang3-3.1.jar",
     "javaRuntime": false
   },
   {
@@ -156,6 +182,19 @@
     "javaRuntime": true
   },
   {
+    "symbolicName": "com.paulscode.codecwav",
+    "version": {
+      "major": 20101023,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "12f031cfe88fef5c1dd36c563c0a3a69bd7261da",
+    "jarFileModificationDate": "2013-11-20T22:18:08.969-07:00",
+    "location": "P:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\com\\paulscode\\codecwav\\20101023\\codecwav-20101023.jar",
+    "javaRuntime": false
+  },
+  {
     "symbolicName": "1.6.4",
     "version": {
       "major": -1,
@@ -165,46 +204,20 @@
     },
     "jarFileFingerprint": "86b53acabb2b8c93ea350b0e9aef19cd091cf617",
     "jarFileModificationDate": "2013-11-21T17:22:32.660-07:00",
-    "location": "D:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\versions\\1.6.4\\1.6.4.jar",
+    "location": "P:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\versions\\1.6.4\\1.6.4.jar",
     "javaRuntime": false
   },
   {
-    "symbolicName": "launchwrapper-1.8",
+    "symbolicName": "net.java.jutils.jutils",
     "version": {
-      "major": -1,
-      "minor": -1,
-      "micro": -1,
-      "qualifier": ""
-    },
-    "jarFileFingerprint": "d4c0895977dd7f0b3f56281cee53a64d4c0c0322",
-    "jarFileModificationDate": "2013-11-20T22:18:09.109-07:00",
-    "location": "D:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\net\\minecraft\\launchwrapper\\1.8\\launchwrapper-1.8.jar",
-    "javaRuntime": false
-  },
-  {
-    "symbolicName": "com.paulscode.codecjorbis",
-    "version": {
-      "major": 20101023,
+      "major": 1,
       "minor": 0,
       "micro": 0,
       "qualifier": ""
     },
-    "jarFileFingerprint": "c73b5636faf089d9f00e8732a829577de25237ee",
-    "jarFileModificationDate": "2013-11-20T22:18:08.969-07:00",
-    "location": "D:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\com\\paulscode\\codecjorbis\\20101023\\codecjorbis-20101023.jar",
-    "javaRuntime": false
-  },
-  {
-    "symbolicName": "bcprov",
-    "version": {
-      "major": 1,
-      "minor": 47,
-      "micro": 0,
-      "qualifier": ""
-    },
-    "jarFileFingerprint": "b6f5d9926b0afbde9f4dbe3db88c5247be7794bb",
-    "jarFileModificationDate": "2013-11-20T22:18:09.265-07:00",
-    "location": "D:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\org\\bouncycastle\\bcprov-jdk15on\\1.47\\bcprov-jdk15on-1.47.jar",
+    "jarFileFingerprint": "e12fe1fda814bd348c1579329c86943d2cd3c6a6",
+    "jarFileModificationDate": "2013-11-20T22:18:09.093-07:00",
+    "location": "P:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\net\\java\\jutils\\jutils\\1.0.0\\jutils-1.0.0.jar",
     "javaRuntime": false
   },
   {
@@ -221,6 +234,19 @@
     "javaRuntime": true
   },
   {
+    "symbolicName": "lzma-0.0.1",
+    "version": {
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "521616dc7487b42bef0e803bd2fa3faf668101d7",
+    "jarFileModificationDate": "2013-11-20T22:18:09.062-07:00",
+    "location": "P:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\lzma\\lzma\\0.0.1\\lzma-0.0.1.jar",
+    "javaRuntime": false
+  },
+  {
     "symbolicName": "jre",
     "version": {
       "major": 1,
@@ -234,16 +260,16 @@
     "javaRuntime": true
   },
   {
-    "symbolicName": "lwjgl_util-2.9.0",
+    "symbolicName": "com.google.guava",
     "version": {
-      "major": -1,
-      "minor": -1,
-      "micro": -1,
+      "major": 14,
+      "minor": 0,
+      "micro": 0,
       "qualifier": ""
     },
-    "jarFileFingerprint": "a778846b64008fc7f48ead2377f034e547991699",
-    "jarFileModificationDate": "2013-11-20T22:18:09.327-07:00",
-    "location": "D:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\org\\lwjgl\\lwjgl\\lwjgl_util\\2.9.0\\lwjgl_util-2.9.0.jar",
+    "jarFileFingerprint": "67b7be4ee7ba48e4828a42d6d5069761186d4a53",
+    "jarFileModificationDate": "2013-11-20T22:18:08.953-07:00",
+    "location": "P:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\com\\google\\guava\\guava\\14.0\\guava-14.0.jar",
     "javaRuntime": false
   },
   {
@@ -273,19 +299,6 @@
     "javaRuntime": true
   },
   {
-    "symbolicName": "net.sf.jopt-simple.jopt-simple",
-    "version": {
-      "major": 4,
-      "minor": 5,
-      "micro": 0,
-      "qualifier": ""
-    },
-    "jarFileFingerprint": "6065cc95c661255349c1d0756657be17c29a4fd3",
-    "jarFileModificationDate": "2013-11-20T22:18:09.125-07:00",
-    "location": "D:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\net\\sf\\jopt-simple\\jopt-simple\\4.5\\jopt-simple-4.5.jar",
-    "javaRuntime": false
-  },
-  {
     "symbolicName": "jre",
     "version": {
       "major": 1,
@@ -297,45 +310,6 @@
     "jarFileModificationDate": "2013-11-18T00:30:30.113-07:00",
     "location": "X:\\Program Files\\Java\\jre7\\lib\\ext\\zipfs.jar",
     "javaRuntime": true
-  },
-  {
-    "symbolicName": "org.objectweb.asm.all.debug",
-    "version": {
-      "major": 4,
-      "minor": 1,
-      "micro": 0,
-      "qualifier": ""
-    },
-    "jarFileFingerprint": "dd6ba5c392d4102458494e29f54f70ac534ec2a2",
-    "jarFileModificationDate": "2013-11-20T22:18:09.359-07:00",
-    "location": "D:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\org\\ow2\\asm\\asm-debug-all\\4.1\\asm-debug-all-4.1.jar",
-    "javaRuntime": false
-  },
-  {
-    "symbolicName": "com.paulscode.librarylwjglopenal",
-    "version": {
-      "major": 20100824,
-      "minor": 0,
-      "micro": 0,
-      "qualifier": ""
-    },
-    "jarFileFingerprint": "73e80d0794c39665aec3f62eee88ca91676674ef",
-    "jarFileModificationDate": "2013-11-20T22:18:09.015-07:00",
-    "location": "D:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\com\\paulscode\\librarylwjglopenal\\20100824\\librarylwjglopenal-20100824.jar",
-    "javaRuntime": false
-  },
-  {
-    "symbolicName": "org.apache.commons.io",
-    "version": {
-      "major": 2,
-      "minor": 4,
-      "micro": 0,
-      "qualifier": ""
-    },
-    "jarFileFingerprint": "b1b6ea3b7e4aa4f492509a4952029cd8e48019ad",
-    "jarFileModificationDate": "2013-11-20T22:18:09.062-07:00",
-    "location": "D:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\commons-io\\commons-io\\2.4\\commons-io-2.4.jar",
-    "javaRuntime": false
   },
   {
     "symbolicName": "jre",
@@ -364,29 +338,16 @@
     "javaRuntime": true
   },
   {
-    "symbolicName": "org.apache.commons.lang3",
+    "symbolicName": "com.paulscode.codecjorbis",
     "version": {
-      "major": 3,
-      "minor": 1,
-      "micro": 0,
-      "qualifier": ""
-    },
-    "jarFileFingerprint": "905075e6c80f206bbe6cf1e809d2caa69f420c76",
-    "jarFileModificationDate": "2013-11-20T22:18:09.203-07:00",
-    "location": "D:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\org\\apache\\commons\\commons-lang3\\3.1\\commons-lang3-3.1.jar",
-    "javaRuntime": false
-  },
-  {
-    "symbolicName": "net.java.jutils.jutils",
-    "version": {
-      "major": 1,
+      "major": 20101023,
       "minor": 0,
       "micro": 0,
       "qualifier": ""
     },
-    "jarFileFingerprint": "e12fe1fda814bd348c1579329c86943d2cd3c6a6",
-    "jarFileModificationDate": "2013-11-20T22:18:09.093-07:00",
-    "location": "D:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\net\\java\\jutils\\jutils\\1.0.0\\jutils-1.0.0.jar",
+    "jarFileFingerprint": "c73b5636faf089d9f00e8732a829577de25237ee",
+    "jarFileModificationDate": "2013-11-20T22:18:08.969-07:00",
+    "location": "P:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\com\\paulscode\\codecjorbis\\20101023\\codecjorbis-20101023.jar",
     "javaRuntime": false
   },
   {
@@ -403,29 +364,55 @@
     "javaRuntime": true
   },
   {
-    "symbolicName": "com.paulscode.libraryjavasound",
-    "version": {
-      "major": 20101123,
-      "minor": 0,
-      "micro": 0,
-      "qualifier": ""
-    },
-    "jarFileFingerprint": "5c5e304366f75f9eaa2e8cca546a1fb6109348b3",
-    "jarFileModificationDate": "2013-11-20T22:18:09-07:00",
-    "location": "D:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\com\\paulscode\\libraryjavasound\\20101123\\libraryjavasound-20101123.jar",
-    "javaRuntime": false
-  },
-  {
-    "symbolicName": "argo-2.25_fixed",
+    "symbolicName": "launchwrapper-1.8",
     "version": {
       "major": -1,
       "minor": -1,
       "micro": -1,
       "qualifier": ""
     },
-    "jarFileFingerprint": "751761ce15a3e3aaf3fc75b9f013ff8f7b88a585",
-    "jarFileModificationDate": "2013-11-20T22:18:08.891-07:00",
-    "location": "D:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\argo\\argo\\2.25_fixed\\argo-2.25_fixed.jar",
+    "jarFileFingerprint": "d4c0895977dd7f0b3f56281cee53a64d4c0c0322",
+    "jarFileModificationDate": "2013-11-20T22:18:09.109-07:00",
+    "location": "P:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\net\\minecraft\\launchwrapper\\1.8\\launchwrapper-1.8.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "org.objectweb.asm.all.debug",
+    "version": {
+      "major": 4,
+      "minor": 1,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "dd6ba5c392d4102458494e29f54f70ac534ec2a2",
+    "jarFileModificationDate": "2013-11-20T22:18:09.359-07:00",
+    "location": "P:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\org\\ow2\\asm\\asm-debug-all\\4.1\\asm-debug-all-4.1.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "lwjgl_util-2.9.0",
+    "version": {
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "a778846b64008fc7f48ead2377f034e547991699",
+    "jarFileModificationDate": "2013-11-20T22:18:09.327-07:00",
+    "location": "P:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\org\\lwjgl\\lwjgl\\lwjgl_util\\2.9.0\\lwjgl_util-2.9.0.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "lwjgl-2.9.0",
+    "version": {
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "5654d06e61a1bba7ae1e7f5233e1106be64c91cd",
+    "jarFileModificationDate": "2013-11-20T22:18:09.312-07:00",
+    "location": "P:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\org\\lwjgl\\lwjgl\\lwjgl\\2.9.0\\lwjgl-2.9.0.jar",
     "javaRuntime": false
   },
   {
@@ -442,16 +429,29 @@
     "javaRuntime": true
   },
   {
-    "symbolicName": "com.google.gson",
+    "symbolicName": "argo-2.25_fixed",
     "version": {
-      "major": 2,
-      "minor": 2,
-      "micro": 2,
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
       "qualifier": ""
     },
-    "jarFileFingerprint": "1f96456ca233dec780aa224bff076d8e8bca3908",
-    "jarFileModificationDate": "2013-11-20T22:18:08.906-07:00",
-    "location": "D:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\com\\google\\code\\gson\\gson\\2.2.2\\gson-2.2.2.jar",
+    "jarFileFingerprint": "751761ce15a3e3aaf3fc75b9f013ff8f7b88a585",
+    "jarFileModificationDate": "2013-11-20T22:18:08.891-07:00",
+    "location": "P:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\argo\\argo\\2.25_fixed\\argo-2.25_fixed.jar",
+    "javaRuntime": false
+  },
+  {
+    "symbolicName": "com.paulscode.soundsystem",
+    "version": {
+      "major": 20120107,
+      "minor": 0,
+      "micro": 0,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "419c05fe9be71f792b2d76cfc9b67f1ed0fec7f6",
+    "jarFileModificationDate": "2013-11-20T22:18:09.047-07:00",
+    "location": "P:\\Modding\\Odyssey Craft\\forge\\mcp\\jars\\libraries\\com\\paulscode\\soundsystem\\20120107\\soundsystem-20120107.jar",
     "javaRuntime": false
   }
 ]
