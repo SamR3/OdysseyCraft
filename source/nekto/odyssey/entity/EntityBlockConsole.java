@@ -1,5 +1,7 @@
 package nekto.odyssey.entity;
 
+import java.util.ArrayList;
+
 import nekto.math.traversal.Traverser;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
@@ -8,23 +10,21 @@ import net.minecraft.world.World;
 
 public class EntityBlockConsole extends EntityBlock
 {
+	public ArrayList<EntityBlock> childBlocks = new ArrayList<EntityBlock>();
+	
 	public int blockId;
 	public int meta;
 
 	public EntityBlockConsole(World par1World, int x, int y, int z, int id, int meta)
 	{
 		super(par1World, x, y, z, id, meta);
-		
-		this.motionX = 0;
-		this.motionY = 0;
-		this.motionZ = 0;
 	}
 
 	@Override
 	public void onUpdate()
-	{
+	{		
 		this.motionX *= 0.95;
-		this.motionY *= 0.95;//-= (0.95 * this.motionY);
+		this.motionY *= 0.95;
 		this.motionZ *= 0.95;
 		
 		super.onUpdate();
@@ -53,13 +53,21 @@ public class EntityBlockConsole extends EntityBlock
 	@Override
 	public boolean interactFirst(EntityPlayer par1EntityPlayer)
 	{		
-		int[] blockList = new int[] { 1, 3 }; 
+		int[] blockList = new int[] { 1 }; 
 		
-		new Traverser((int) Math.round(posX - 0.5), (int) Math.round(posY - 0.5), (int) Math.round(posZ - 0.5), blockList, par1EntityPlayer, this.worldObj);
+		new Traverser((int) Math.round(posX - 0.5), (int) Math.round(posY - 0.5), (int) Math.round(posZ - 0.5), blockList, par1EntityPlayer, this.worldObj, this);
 		this.rejoinWorld();
 			
 		return true;
 	}
+	
+	public void addChild(EntityBlock ent)
+	{
+		this.childBlocks.add(ent);
+	}
+	
+	@Override
+	public void setSpeedFromParent() {}
 	
 	@Override
 	protected void readEntityFromNBT(NBTTagCompound nbttagcompound)

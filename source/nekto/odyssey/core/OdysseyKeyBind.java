@@ -2,11 +2,11 @@ package nekto.odyssey.core;
 
 import java.util.EnumSet;
 
-import org.lwjgl.input.Keyboard;
-
-import nekto.odyssey.craft.CraftManager;
 import nekto.odyssey.network.PacketManager;
 import net.minecraft.client.settings.KeyBinding;
+
+import org.lwjgl.input.Keyboard;
+
 import cpw.mods.fml.client.registry.KeyBindingRegistry.KeyHandler;
 import cpw.mods.fml.common.TickType;
 import cpw.mods.fml.common.network.PacketDispatcher;
@@ -15,7 +15,7 @@ public class OdysseyKeyBind extends KeyHandler
 {
 	 private EnumSet<TickType> tickTypes = EnumSet.of(TickType.CLIENT);
 	 private boolean keyPressed;
-	 private float yaw;
+	 //private float yaw;
      
      public OdysseyKeyBind(KeyBinding[] KeyBindings, boolean[] repeatings)
      {
@@ -25,7 +25,7 @@ public class OdysseyKeyBind extends KeyHandler
      @Override
      public String getLabel()
      {
-    	 return "UpKey";
+    	 return "Odyssey Controls";
      }
      
      @Override

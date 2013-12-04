@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import nekto.odyssey.craft.CraftManager;
-import nekto.odyssey.entity.EntityBlock;
+import nekto.odyssey.entity.EntityBlockConsole;
 import nekto.odyssey.network.PacketManager;
 import net.minecraft.client.entity.EntityClientPlayerMP;
 import net.minecraft.entity.player.EntityPlayer;
@@ -23,6 +23,7 @@ public class Traverser
 	private int[] blockTypes;
 	private EntityPlayer player;
 	private World world;
+	private EntityBlockConsole parent;
 	
 	int count = 0;
 	
@@ -36,7 +37,7 @@ public class Traverser
             {-1, 0, 0}
         };
 	
-	public Traverser(int x, int y, int z, int[] block, EntityPlayer par1Player, World par2World)
+	public Traverser(int x, int y, int z, int[] block, EntityPlayer par1Player, World par2World, EntityBlockConsole ent)
 	{
 		this.world = par2World;
         
@@ -47,6 +48,7 @@ public class Traverser
         this.currNode[2] = z;
                 
         this.blockTypes = block;
+        this.parent = ent;
         
         beginTraversal();
 	}
@@ -99,7 +101,7 @@ public class Traverser
 			        EntityClientPlayerMP playerCast = (EntityClientPlayerMP) player;
 					playerCast.sendQueue.addToSendQueue(PacketManager.generateUpdatePacket(block[0], block[1], block[2]));
 					
-					//CraftManager.spawnChildEntity(new EntityBlock(player.worldObj, block[0], block[1], block[2], player.worldObj.getBlockId(block[0], block[1], block[2]), player.worldObj.getBlockMetadata(block[0], block[1], block[2])));
+					CraftManager.spawnChildEntity(player.worldObj, block[0], block[1], block[2], player.worldObj.getBlockId(block[0], block[1], block[2]), player.worldObj.getBlockMetadata(block[0], block[1], block[2]), this.parent);
 			}
 		}
 	}
