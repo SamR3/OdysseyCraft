@@ -2,6 +2,8 @@ package nekto.odyssey.craft;
 
 import java.util.ArrayList;
 
+import net.minecraft.world.World;
+
 public class CraftManager
 {
 	private static CraftManager instance = null;

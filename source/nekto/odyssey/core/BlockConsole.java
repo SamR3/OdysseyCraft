@@ -20,7 +20,8 @@ public class BlockConsole extends Block
     {
 		if (par1World.isRemote)
         {
-        	CraftManager.spawnCraft(par1World, par2, par3, par4, this.blockID, par1World.getBlockMetadata(par2, par3, par4), par5EntityPlayer);
+			//TODO: use craft registry
+        	//CraftManager.spawnCraft(par1World, par2, par3, par4, this.blockID, par1World.getBlockMetadata(par2, par3, par4), par5EntityPlayer);
         }
 		
     	par1World.setBlockToAir(par2, par3, par4);

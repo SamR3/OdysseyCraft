@@ -101,7 +101,8 @@ public class Traverser
 			        EntityClientPlayerMP playerCast = (EntityClientPlayerMP) player;
 					playerCast.sendQueue.addToSendQueue(PacketManager.generateUpdatePacket(block[0], block[1], block[2]));
 					
-					CraftManager.spawnChildEntity(player.worldObj, block[0], block[1], block[2], player.worldObj.getBlockId(block[0], block[1], block[2]), player.worldObj.getBlockMetadata(block[0], block[1], block[2]), this.parent);
+					//TODO: create addblock
+					//CraftManager.spawnChildEntity(player.worldObj, block[0], block[1], block[2], player.worldObj.getBlockId(block[0], block[1], block[2]), player.worldObj.getBlockMetadata(block[0], block[1], block[2]), this.parent);
 			}
 		}
 	}

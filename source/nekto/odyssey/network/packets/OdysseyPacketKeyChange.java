@@ -27,7 +27,7 @@ public class OdysseyPacketKeyChange extends OdysseyPacket
 			ex.printStackTrace();
 		}
 		
-		CraftManager.setSpeeds(deltaX, deltaY, deltaZ, deltaYaw);
+		//CraftManager.setSpeeds(deltaX, deltaY, deltaZ, deltaYaw);
 	}
 	
 }
