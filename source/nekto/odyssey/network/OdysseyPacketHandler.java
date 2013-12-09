@@ -18,22 +18,24 @@ import cpw.mods.fml.common.network.Player;
 public class OdysseyPacketHandler implements IPacketHandler
 {
 	private Map<String, OdysseyPacket> types = new Hashtable<String, OdysseyPacket>();
-	
+
 	OdysseyPacketBlockUpdate packetBlockUpdate = new OdysseyPacketBlockUpdate();
 	OdysseyPacketKeyChange packetKeyChange = new OdysseyPacketKeyChange();
-	
+
 	public OdysseyPacketHandler()
 	{
 		types.put(GeneralRef.BLOCK_UPDATE_CHANNEL, packetBlockUpdate);
 		types.put(GeneralRef.KEY_CHANGE_CHANNEL, packetKeyChange);
 	}
-	
+
 	@Override
-	public void onPacketData(INetworkManager manager, Packet250CustomPayload packet, Player par3Player)
+	public void onPacketData(INetworkManager manager,
+			Packet250CustomPayload packet, Player par3Player)
 	{
-		EntityPlayer player= (EntityPlayer)par3Player;
-        DataInputStream iStream = new DataInputStream(new ByteArrayInputStream(packet.data));
-        
-        types.get(packet.channel).handle(iStream, player);
-	}	
+		EntityPlayer player = (EntityPlayer) par3Player;
+		DataInputStream iStream = new DataInputStream(new ByteArrayInputStream(
+				packet.data));
+
+		types.get(packet.channel).handle(iStream, player);
+	}
 }

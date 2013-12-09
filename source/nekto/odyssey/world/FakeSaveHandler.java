@@ -14,56 +14,65 @@ public class FakeSaveHandler implements ISaveHandler
 {
 
 	@Override
-	public WorldInfo loadWorldInfo() {
+	public WorldInfo loadWorldInfo()
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void checkSessionLock() throws MinecraftException {
+	public void checkSessionLock() throws MinecraftException
+	{
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
-	public IChunkLoader getChunkLoader(WorldProvider worldprovider) {
+	public IChunkLoader getChunkLoader(WorldProvider worldprovider)
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void saveWorldInfoWithPlayer(WorldInfo worldinfo,
-			NBTTagCompound nbttagcompound) {
+			NBTTagCompound nbttagcompound)
+	{
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
-	public void saveWorldInfo(WorldInfo worldinfo) {
+	public void saveWorldInfo(WorldInfo worldinfo)
+	{
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
-	public IPlayerFileData getSaveHandler() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void flush() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public File getMapFileFromName(String s) {
+	public IPlayerFileData getSaveHandler()
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String getWorldDirectoryName() {
+	public void flush()
+	{
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public File getMapFileFromName(String s)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getWorldDirectoryName()
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -2,9 +2,9 @@ package nekto.odyssey.network;
 
 public class CommonProxy
 {
-	//Client
+	// Client
 	public void registerRenderers()
 	{
-		
+
 	}
 }

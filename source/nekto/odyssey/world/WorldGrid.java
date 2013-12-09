@@ -1,11 +1,11 @@
 package nekto.odyssey.world;
 
-import java.awt.List;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 
 import nekto.odyssey.entity.EntityBlock;
 import nekto.odyssey.entity.EntityBlockConsole;
@@ -35,6 +35,10 @@ import net.minecraft.world.chunk.IChunkProvider;
 public class WorldGrid extends World implements IBlockAccess 
 {
 	public World worldObj;
+	
+	public static boolean dynamicLighting = false;
+	private int[] lightUpdateBlockList = new int[32768];
+	private boolean lightUpdatesAllowed = false;
 	
 	public HashSet<EntityBlock> gridBlocks = new HashSet<EntityBlock>();
 	public HashSet<EntityBlock> collidableGridBlocks = new HashSet<EntityBlock>();
@@ -952,6 +956,7 @@ public class WorldGrid extends World implements IBlockAccess
 		return true;
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Override
 	public boolean setBlock(int x, int y, int z, int id, int meta, int flag) 
 	{
@@ -1054,7 +1059,6 @@ public class WorldGrid extends World implements IBlockAccess
 	@Override
 	public List getEntitiesWithinAABBExcludingEntity(Entity entity, AxisAlignedBB axisalignedbb)
     {
-		// TODO Auto-generated method stub
         return new ArrayList<Entity>();
     }
 	
@@ -1062,7 +1066,6 @@ public class WorldGrid extends World implements IBlockAccess
 	@Override
     public List getEntitiesWithinAABB(Class class1, AxisAlignedBB axisalignedbb)
     {
-		// TODO Auto-generated method stub
         return new ArrayList<Entity>();
     }
 	
@@ -1181,5 +1184,17 @@ public class WorldGrid extends World implements IBlockAccess
 			}
 		}
 		return s;
+	}
+
+	@Override
+	protected IChunkProvider createChunkProvider() 
+	{
+		return null;
+	}
+
+	@Override
+	public Entity getEntityByID(int i) 
+	{
+		return null;
 	}
 }

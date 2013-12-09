@@ -11,43 +11,50 @@ import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.src.ModLoader;
 
-public class MetaRotation 
+public class MetaRotation
 {
 	public static HashMap<BlockMetaPair, BlockMetaPair> rotationDatabase = new HashMap<BlockMetaPair, BlockMetaPair>();
 	public static File mcDir = Minecraft.getMinecraft().mcDataDir;
-	public static File metaRotationDir = new File(mcDir, "/config/MetaRotation/");
-	
-	public static void addRotationData(BlockMetaPair oldbmp, BlockMetaPair newbmp) 
+	public static File metaRotationDir = new File(mcDir,
+			"/config/MetaRotation/");
+
+	public static void addRotationData(BlockMetaPair oldbmp,
+			BlockMetaPair newbmp)
 	{
 		rotationDatabase.put(oldbmp, newbmp);
 	}
-	
+
 	public static boolean addRotationDataFromString(String s)
 	{
 		try
 		{
-			//Separate bitmask
+			// Separate bitmask
 			int bitmask = 15;
 			String parts[] = s.split("bm:", 2);
 			s = parts[0];
-			try {
+			try
+			{
 				bitmask = Integer.parseInt(parts[1].trim());
-			} catch (Exception e) {
-				
+			} catch (Exception e)
+			{
+
 			}
-			
-			
-			//Split BlockMetaPairs
+
+			// Split BlockMetaPairs
 			parts = s.split("->");
 			BlockMetaPair abmp[] = new BlockMetaPair[parts.length];
-			for (int i = 0; i < parts.length; i++) {
+			for (int i = 0; i < parts.length; i++)
+			{
 				abmp[i] = new BlockMetaPair(parts[i]);
 			}
-			
-			//Add rotation data
-			for (int i = 0; i < parts.length - 1; i++) {
-				for (int j = 0; j < 15; j++) {
-					if ((j & bitmask) == 0) {
+
+			// Add rotation data
+			for (int i = 0; i < parts.length - 1; i++)
+			{
+				for (int j = 0; j < 15; j++)
+				{
+					if ((j & bitmask) == 0)
+					{
 						BlockMetaPair oldbmp = abmp[i].clone();
 						BlockMetaPair newbmp = abmp[i + 1].clone();
 						oldbmp.meta = oldbmp.meta & bitmask | j;
@@ -57,129 +64,157 @@ public class MetaRotation
 				}
 			}
 			return true;
-		} catch (Exception e) {
-			ModLoader.getLogger().log(Level.WARNING, "Failed to read rotation data from string \"" + s + "\"", e);
+		} catch (Exception e)
+		{
+			ModLoader.getLogger()
+					.log(Level.WARNING,
+							"Failed to read rotation data from string \"" + s
+									+ "\"", e);
 			return false;
 		}
 	}
-	
+
 	public static boolean addRotationDataFromFile(File file)
 	{
 		boolean flag = true;
 
-		ModLoader.getLogger().log(Level.INFO, "Rotation data loaded so far: " + rotationDatabase.size());
-		ModLoader.getLogger().log(Level.INFO, "Starting reading rotation data from \"" + file.getPath() + "\"");
-		
-		try {
+		ModLoader.getLogger().log(Level.INFO,
+				"Rotation data loaded so far: " + rotationDatabase.size());
+		ModLoader.getLogger().log(
+				Level.INFO,
+				"Starting reading rotation data from \"" + file.getPath()
+						+ "\"");
+
+		try
+		{
 			BufferedReader br = new BufferedReader(new FileReader(file));
 			String line;
-			
+
 			while ((line = br.readLine()) != null)
 			{
 				line = line.trim();
-				if (line.length() < 1 || line.charAt(0) == ';') {
+				if (line.length() < 1 || line.charAt(0) == ';')
+				{
 					// empty line or comment
-				} else {
+				} else
+				{
 					flag &= addRotationDataFromString(line);
 				}
 			}
-			
+
 			br.close();
-		} catch (Exception e) {
-			ModLoader.getLogger().log(Level.WARNING, "Failed to read rotation data from file \"" + file.getPath() + "\"", e);
+		} catch (Exception e)
+		{
+			ModLoader.getLogger().log(
+					Level.WARNING,
+					"Failed to read rotation data from file \""
+							+ file.getPath() + "\"", e);
 			return false;
 		}
-		ModLoader.getLogger().log(Level.INFO, "Finished reading rotation data from \"" + file.getPath() + "\"");
-		ModLoader.getLogger().log(Level.INFO, "Rotation data loaded so far: " + rotationDatabase.size());
-		
+		ModLoader.getLogger().log(
+				Level.INFO,
+				"Finished reading rotation data from \"" + file.getPath()
+						+ "\"");
+		ModLoader.getLogger().log(Level.INFO,
+				"Rotation data loaded so far: " + rotationDatabase.size());
+
 		return flag;
 	}
-	
-	public static boolean addRotationDataFromFolder(File folder) {
+
+	public static boolean addRotationDataFromFolder(File folder)
+	{
 		boolean flag = true;
-		for (File file : folder.listFiles()) {
-			if (file.isDirectory()) {
+		for (File file : folder.listFiles())
+		{
+			if (file.isDirectory())
+			{
 				flag &= addRotationDataFromFolder(file);
 			}
-			if (file.getName().endsWith(".meta")) {
+			if (file.getName().endsWith(".meta"))
+			{
 				flag &= addRotationDataFromFile(file);
 			}
-			/*if (file.getName().endsWith(".zip")) {
-				ZipFile zip;
-				
-					zip = new ZipFile(file);
-				flag &= addRotationDataFromZip(zip);
-			}*/
+			/*
+			 * if (file.getName().endsWith(".zip")) { ZipFile zip;
+			 * 
+			 * zip = new ZipFile(file); flag &= addRotationDataFromZip(zip); }
+			 */
 		}
 		return flag;
 	}
 
-
-	public static BlockMetaPair rotateMeta(int id, int meta, int rotationAmount) 
+	public static BlockMetaPair rotateMeta(int id, int meta, int rotationAmount)
 	{
 		return rotateMeta(new BlockMetaPair(id, meta), rotationAmount);
 	}
-	
-	public static BlockMetaPair rotateMeta(Block block, int meta, int rotationAmount) 
+
+	public static BlockMetaPair rotateMeta(Block block, int meta,
+			int rotationAmount)
 	{
-		return rotateMeta(new BlockMetaPair(block.blockID, meta), rotationAmount);
+		return rotateMeta(new BlockMetaPair(block.blockID, meta),
+				rotationAmount);
 	}
-	
-	public static BlockMetaPair rotateMeta(String s, int rotationAmount) 
+
+	public static BlockMetaPair rotateMeta(String s, int rotationAmount)
 	{
 		return rotateMeta(new BlockMetaPair(s), rotationAmount);
 	}
-	
-	public static BlockMetaPair rotateMeta(BlockMetaPair originalIDMeta, int rotationAmount) 
+
+	public static BlockMetaPair rotateMeta(BlockMetaPair originalIDMeta,
+			int rotationAmount)
 	{
-		//printDatabase();
-		try {
+		// printDatabase();
+		try
+		{
 			rotationAmount %= 4;
 			BlockMetaPair newIDMeta = originalIDMeta;
-			
-			for (int i = 0; i < rotationAmount; i++) 
+
+			for (int i = 0; i < rotationAmount; i++)
 			{
 				newIDMeta = rotateMetaOnce(newIDMeta);
 			}
-			
-			if (newIDMeta == null) newIDMeta = originalIDMeta;
-			
+
+			if (newIDMeta == null)
+				newIDMeta = originalIDMeta;
+
 			return newIDMeta;
-		} catch (Exception e) {
+		} catch (Exception e)
+		{
 			return originalIDMeta;
 		}
 	}
-	
-	private static BlockMetaPair rotateMetaOnce(BlockMetaPair originalIDMeta) 
+
+	private static BlockMetaPair rotateMetaOnce(BlockMetaPair originalIDMeta)
 	{
 		BlockMetaPair newIDMeta = rotationDatabase.get(originalIDMeta);
-	
-		if (newIDMeta == null) newIDMeta = originalIDMeta;
-		
+
+		if (newIDMeta == null)
+			newIDMeta = originalIDMeta;
+
 		return newIDMeta;
 	}
-	
-	private static void printDatabase() 
+
+	private static void printDatabase()
 	{
-		for (BlockMetaPair bmp1 : rotationDatabase.keySet()) 
+		for (BlockMetaPair bmp1 : rotationDatabase.keySet())
 		{
 			BlockMetaPair bmp2 = rotationDatabase.get(bmp1);
 			ModLoader.getLogger().log(Level.INFO, "" + bmp1 + " -> " + bmp2);
 		}
 	}
-	
+
 	public static void createDefaultFile()
 	{
-		try 
+		try
 		{
-			if (!metaRotationDir.exists()) 
+			if (!metaRotationDir.exists())
 			{
 				metaRotationDir.mkdir();
 			}
-		
+
 			File vanillaMeta = new File(metaRotationDir, "/Vanilla.meta");
-			
-			if (!vanillaMeta.exists()) 
+
+			if (!vanillaMeta.exists())
 			{
 				String s = "";
 				s += "; This file must be located in .minecraft/config/MetaRotation, or any subfolder.\n";
@@ -287,13 +322,14 @@ public class MetaRotation
 				s += "99:2 -> :4 -> :8 -> :6 -> :2\n";
 				s += "100:1 -> :7 -> :9 -> :3 -> :1\n";
 				s += "100:2 -> :4 -> :8 -> :6 -> :2\n";
-				
+
 				vanillaMeta.createNewFile();
 				FileWriter writer = new FileWriter(vanillaMeta);
 				writer.write(s);
 				writer.close();
 			}
-		} catch (Exception e) {
+		} catch (Exception e)
+		{
 		}
 	}
 }

@@ -14,20 +14,21 @@ public class OdysseyPacketKeyChange extends OdysseyPacket
 		float deltaX = 0;
 		float deltaY = 0;
 		float deltaZ = 0;
-		
+
 		float deltaYaw = 0;
-		
+
 		try
 		{
 			deltaX = iStream.readFloat();
 			deltaY = iStream.readFloat();
 			deltaZ = iStream.readFloat();
 			deltaYaw = iStream.readFloat();
-		} catch (IOException ex) {
+		} catch (IOException ex)
+		{
 			ex.printStackTrace();
 		}
-		
-		//CraftManager.setSpeeds(deltaX, deltaY, deltaZ, deltaYaw);
+
+		// CraftManager.setSpeeds(deltaX, deltaY, deltaZ, deltaYaw);
 	}
-	
+
 }

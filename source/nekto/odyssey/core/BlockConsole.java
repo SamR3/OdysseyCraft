@@ -15,17 +15,16 @@ public class BlockConsole extends Block
 		super(par1, par2Material);
 		setCreativeTab(CreativeTabs.tabBlock);
 	}
+	
+	private void activateController(World world, int i, int j, int k)
+	{
+		CraftManager.getInstance().createShipFromConsole(world, i, j, k);
+	}
 
-	public boolean onBlockActivated(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9)
-    {
-		if (par1World.isRemote)
-        {
-			//TODO: use craft registry
-        	//CraftManager.spawnCraft(par1World, par2, par3, par4, this.blockID, par1World.getBlockMetadata(par2, par3, par4), par5EntityPlayer);
-        }
-		
-    	par1World.setBlockToAir(par2, par3, par4);
-        	
-        return true;
-    }
+	@Override
+	public boolean onBlockActivated(World world, int i, int j, int k, EntityPlayer player, int par6, float par7, float par8, float par9)	
+	{
+		activateController(world, i, j, k);
+		return true;
+	}
 }

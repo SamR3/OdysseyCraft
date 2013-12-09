@@ -23,38 +23,47 @@ import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = GeneralRef.MODID, name = "Odyssey Craft", version = GeneralRef.VERSION)
-@NetworkMod(clientSideRequired = true, serverSideRequired = false,
-	channels = {GeneralRef.BLOCK_UPDATE_CHANNEL, GeneralRef.KEY_CHANGE_CHANNEL}, packetHandler = OdysseyPacketHandler.class)
-
+@NetworkMod(clientSideRequired = true, serverSideRequired = false, channels = {
+		GeneralRef.BLOCK_UPDATE_CHANNEL, GeneralRef.KEY_CHANGE_CHANNEL }, packetHandler = OdysseyPacketHandler.class)
 public class OdysseyCore
 {
 	@Instance(value = GeneralRef.MODID)
-    public static OdysseyCore instance;
-	
+	public static OdysseyCore instance;
+
 	@SidedProxy(clientSide = "nekto.odyssey.client.ClientProxy", serverSide = "nekto.odyssey.network.CommonProxy")
 	public static CommonProxy proxy;
-	
+
 	public static Block console;
-	
+
 	@EventHandler
-    public void preInit(FMLPreInitializationEvent event) 
+	public void preInit(FMLPreInitializationEvent event)
 	{
 		proxy.registerRenderers();
-		
-		KeyBinding[] key = {new KeyBinding("I", Keyboard.KEY_I), new KeyBinding("K", Keyboard.KEY_K), new KeyBinding("J", Keyboard.KEY_J), new KeyBinding("L", Keyboard.KEY_L)};
-		boolean[] repeat = {false, false, false, false};
-		
+
+		KeyBinding[] key = { new KeyBinding("I", Keyboard.KEY_I),
+				new KeyBinding("K", Keyboard.KEY_K),
+				new KeyBinding("J", Keyboard.KEY_J),
+				new KeyBinding("L", Keyboard.KEY_L) };
+		boolean[] repeat = { false, false, false, false };
+
 		KeyBindingRegistry.registerKeyBinding(new OdysseyKeyBind(key, repeat));
-		
-		console = new BlockConsole(500, Material.rock).setUnlocalizedName("console");
-		GameRegistry.registerBlock(console, GeneralRef.MODID + console.getUnlocalizedName().substring(5));
+
+		console = new BlockConsole(500, Material.rock)
+				.setUnlocalizedName("console");
+		GameRegistry.registerBlock(console, GeneralRef.MODID
+				+ console.getUnlocalizedName().substring(5));
 	}
-	
+
 	@EventHandler
 	public void load(FMLInitializationEvent event)
 	{
-		EntityRegistry.registerModEntity(EntityBlock.class, "EntityBlock", EntityRegistry.findGlobalUniqueEntityId(), instance, 80, 3, false);
-		EntityRegistry.registerModEntity(EntityBlockConsole.class, "EntityBlockConsole", EntityRegistry.findGlobalUniqueEntityId(), instance, 80, 3, false);
+		EntityRegistry.registerModEntity(EntityBlock.class, "EntityBlock",
+				EntityRegistry.findGlobalUniqueEntityId(), instance, 80, 3,
+				false);
+		EntityRegistry.registerModEntity(EntityBlockConsole.class,
+				"EntityBlockConsole",
+				EntityRegistry.findGlobalUniqueEntityId(), instance, 80, 3,
+				false);
 	}
 
 }
