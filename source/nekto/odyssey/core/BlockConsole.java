@@ -24,7 +24,12 @@ public class BlockConsole extends Block
 	@Override
 	public boolean onBlockActivated(World world, int i, int j, int k, EntityPlayer player, int par6, float par7, float par8, float par9)	
 	{
-		activateController(world, i, j, k);
+		if(world.isRemote)
+		{
+			activateController(world, i, j, k);
+		}
+		
+		world.setBlockToAir(i, j, k);
 		return true;
 	}
 }

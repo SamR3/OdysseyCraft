@@ -112,6 +112,7 @@ public class MasterCraftEntity extends EntityBlockConsole
 	}
 	
 	private boolean childrenJoined = false;
+	@SuppressWarnings("unchecked")
 	@Override
 	public void onUpdate()
 	{
@@ -260,8 +261,6 @@ public class MasterCraftEntity extends EntityBlockConsole
 		rotationYaw += deltaYaw;
 		rotationYaw = (rotationYaw + 360) % 360;
 		prevRotationYaw = (float) (rotationYaw - deltaYaw);
-
-		double deltaTotal = Math.sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ);
 		
 		setPosition(posX + deltaX, posY + deltaY, posZ + deltaZ);
 		
@@ -458,7 +457,6 @@ public class MasterCraftEntity extends EntityBlockConsole
 		rotationYaw = (rotationYaw + 360) % 360;
 		prevRotationYaw = (float) (rotationYaw - deltaYaw);
 
-		double deltaTotal = Math.sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ);
 		setPosition(posX + deltaX, posY + deltaY, posZ + deltaZ);
 		isCollidedHorizontally = origDeltaX != deltaX || origDeltaZ != deltaZ;
 		isCollidedVertically = origDeltaY != deltaY;

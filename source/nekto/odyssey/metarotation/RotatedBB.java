@@ -1,9 +1,8 @@
 package nekto.odyssey.metarotation;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
-import net.minecraft.src.ModLoader;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
@@ -13,7 +12,6 @@ public class RotatedBB extends AxisAlignedBB
 {
 
 	private static List<RotatedBB> rotatedBoundingBoxes = new ArrayList<RotatedBB>();
-	private static int numRotatedBoundingBoxesInUse = 0;
 	public double rotation = 0;
 
 	private RotatedBB(double minX, double minY, double minZ, double maxX,
@@ -64,13 +62,11 @@ public class RotatedBB extends AxisAlignedBB
 	{
 		// AxisAlignedBB.clearBoundingBoxes();
 		rotatedBoundingBoxes.clear();
-		numRotatedBoundingBoxesInUse = 0;
 	}
 
 	public static void clearBoundingBoxPool()
 	{
 		// AxisAlignedBB.clearBoundingBoxPool();
-		numRotatedBoundingBoxesInUse = 0;
 	}
 
 	@Override
@@ -107,8 +103,8 @@ public class RotatedBB extends AxisAlignedBB
 		return getBoundingBoxFromPool(minX - d3, minY - d1, minZ - d3, maxX
 				+ d3, maxY + d1, maxZ + d3, rotation);
 	}
-
-	@Override
+	
+	/*@Override
 	protected boolean isVecInYZ(Vec3 vec3d)
 	{
 		if (vec3d == null)
@@ -150,7 +146,7 @@ public class RotatedBB extends AxisAlignedBB
 			return vec3d.xCoord >= box.minX && vec3d.xCoord <= box.maxX
 					&& vec3d.yCoord >= minY && vec3d.yCoord <= maxY;
 		}
-	}
+	}*/
 
 	@Override
 	public RotatedBB getOffsetBoundingBox(double d, double d1, double d2)

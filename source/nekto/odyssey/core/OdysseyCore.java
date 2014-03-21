@@ -46,8 +46,6 @@ public class OdysseyCore
 				new KeyBinding("L", Keyboard.KEY_L) };
 		boolean[] repeat = { false, false, false, false };
 
-		KeyBindingRegistry.registerKeyBinding(new OdysseyKeyBind(key, repeat));
-
 		console = new BlockConsole(500, Material.rock)
 				.setUnlocalizedName("console");
 		GameRegistry.registerBlock(console, GeneralRef.MODID

@@ -49,10 +49,12 @@ public class CraftEntity extends EntityBlock
     {
 		currentDamage += i;
 		timeSinceHit = 10;
+		
 		if (currentDamage >= Block.blocksList[blockId].getBlockHardness(null, 0, 0, 0) * 4 + 1)
 		{
 			destroy(true);
 		}
+		
         setBeenAttacked();
         return true;
     }
@@ -130,10 +132,6 @@ public class CraftEntity extends EntityBlock
 	{
 		super.loadChildBlock(childData);
 	}
-	
-	
-	
-	
 
 	@Override
 	protected void readEntityFromNBT(NBTTagCompound nbttagcompound) {}

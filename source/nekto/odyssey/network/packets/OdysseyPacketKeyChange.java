@@ -1,9 +1,7 @@
 package nekto.odyssey.network.packets;
 
 import java.io.DataInputStream;
-import java.io.IOException;
 
-import nekto.odyssey.craft.CraftManager;
 import net.minecraft.entity.player.EntityPlayer;
 
 public class OdysseyPacketKeyChange extends OdysseyPacket
@@ -11,7 +9,7 @@ public class OdysseyPacketKeyChange extends OdysseyPacket
 	@Override
 	public void handle(DataInputStream iStream, EntityPlayer player)
 	{
-		float deltaX = 0;
+		/*float deltaX = 0;
 		float deltaY = 0;
 		float deltaZ = 0;
 
@@ -29,6 +27,6 @@ public class OdysseyPacketKeyChange extends OdysseyPacket
 		}
 
 		// CraftManager.setSpeeds(deltaX, deltaY, deltaZ, deltaYaw);
-	}
+*/	}
 
 }

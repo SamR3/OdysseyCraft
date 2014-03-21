@@ -14,7 +14,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.src.ModLoader;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
@@ -221,7 +220,7 @@ public class EntityBlock extends Entity
 		{
 			Boolean ret = false;
 			Item item = Item.itemsList[stack.itemID];
-			Minecraft mc = ModLoader.getMinecraftInstance();
+			Minecraft mc = Minecraft.getMinecraft();
 			Vec3 vec3d = mc.renderViewEntity.getPosition(1);
 			Vec3 vec3d1 = mc.renderViewEntity.getLook(1);
 			Vec3 vec3d2 = vec3d.addVector(vec3d1.xCoord * 10,
@@ -280,9 +279,7 @@ public class EntityBlock extends Entity
 		try
 		{
 			@SuppressWarnings("unchecked")
-			EntityBlock entity = (EntityBlock) (entityClass
-					.getConstructor(World.class).newInstance(ModLoader
-					.getMinecraftInstance().theWorld));
+			EntityBlock entity = (EntityBlock) (entityClass.getConstructor(World.class).newInstance(Minecraft.getMinecraft().theWorld));
 			entity.loadChildBlock(childData);
 			return entity;
 		} catch (InstantiationException e)

@@ -5,11 +5,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.HashMap;
-import java.util.logging.Level;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
-import net.minecraft.src.ModLoader;
 
 public class MetaRotation
 {
@@ -66,10 +64,6 @@ public class MetaRotation
 			return true;
 		} catch (Exception e)
 		{
-			ModLoader.getLogger()
-					.log(Level.WARNING,
-							"Failed to read rotation data from string \"" + s
-									+ "\"", e);
 			return false;
 		}
 	}
@@ -77,13 +71,6 @@ public class MetaRotation
 	public static boolean addRotationDataFromFile(File file)
 	{
 		boolean flag = true;
-
-		ModLoader.getLogger().log(Level.INFO,
-				"Rotation data loaded so far: " + rotationDatabase.size());
-		ModLoader.getLogger().log(
-				Level.INFO,
-				"Starting reading rotation data from \"" + file.getPath()
-						+ "\"");
 
 		try
 		{
@@ -105,19 +92,9 @@ public class MetaRotation
 			br.close();
 		} catch (Exception e)
 		{
-			ModLoader.getLogger().log(
-					Level.WARNING,
-					"Failed to read rotation data from file \""
-							+ file.getPath() + "\"", e);
 			return false;
 		}
-		ModLoader.getLogger().log(
-				Level.INFO,
-				"Finished reading rotation data from \"" + file.getPath()
-						+ "\"");
-		ModLoader.getLogger().log(Level.INFO,
-				"Rotation data loaded so far: " + rotationDatabase.size());
-
+		
 		return flag;
 	}
 
@@ -192,15 +169,6 @@ public class MetaRotation
 			newIDMeta = originalIDMeta;
 
 		return newIDMeta;
-	}
-
-	private static void printDatabase()
-	{
-		for (BlockMetaPair bmp1 : rotationDatabase.keySet())
-		{
-			BlockMetaPair bmp2 = rotationDatabase.get(bmp1);
-			ModLoader.getLogger().log(Level.INFO, "" + bmp1 + " -> " + bmp2);
-		}
 	}
 
 	public static void createDefaultFile()

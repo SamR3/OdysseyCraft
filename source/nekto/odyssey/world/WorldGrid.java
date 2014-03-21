@@ -385,7 +385,7 @@ public class WorldGrid extends World implements IBlockAccess
 				&& (maxGridX >= x && x >= minGridX) 
 				&& (maxGridZ >= z && z >= minGridZ))
 		{
-			return blockIdLookup[y-minGridY][x-minGridX][z-minGridZ];
+			return blockIdLookup[y - minGridY][x - minGridX][z - minGridZ];
 		}
 		else
 		{
